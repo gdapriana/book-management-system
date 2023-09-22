@@ -1,0 +1,68 @@
+#container #wrapper form {
+  width: 100%;
+  max-width: 294px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+#container #wrapper form h1 {
+  font-size: 24px;
+  margin: 33px;
+  color: #4E4E4E;
+}
+#container #wrapper form .input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 16px;
+}
+#container #wrapper form .input span {
+  font-size: 16px;
+  color: #4E4E4E;
+}
+#container #wrapper form .input input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #EEEEEE;
+  border: none;
+}
+#container #wrapper form .input input:focus {
+  outline: none;
+}
+#container #wrapper form .checkbox {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 4px 0;
+  gap: 4px;
+}
+#container #wrapper form .checkbox span {
+  color: #4E4E4E;
+}
+#container #wrapper form button {
+  padding: 11px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #4E4E4E;
+  color: #FFFFFF;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 23px 0;
+}
+#container #wrapper #bookshelf {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=form.css.map */

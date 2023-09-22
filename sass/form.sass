@@ -1,0 +1,77 @@
+@use "colors" as cl
+@use "sizes" as sz
+@use "mixin" as mx
+
+#container
+  #wrapper
+    form
+      width: 100%
+      max-width: 294px
+      @include mx.flex()
+      flex-direction: column
+      gap: 16px
+
+      h1
+        font-size: 24px
+        margin: 33px
+        color: cl.$darkLiver
+
+      .input
+        width: 100%
+        @include mx.flex(center, start)
+        flex-direction: column
+        gap: 7px
+        font-size: 16px
+
+        span
+          font-size: 16px
+          color: cl.$darkLiver
+
+        input
+          width: 100%
+          padding: 12px
+          border-radius: 5px
+          background-color: cl.$brightGray
+          border: none
+          &:focus
+            outline: none
+
+      .checkbox
+        width: 100%
+        @include mx.flex(start)
+        margin: 4px 0
+        gap: 4px
+        span
+          color: cl.$darkLiver
+
+      button
+        padding: 11px 18px
+        font-size: 16px
+        font-weight: bold
+        border: none
+        background-color: cl.$darkLiver
+        color: cl.$white
+        border-radius: 8px
+        cursor: pointer
+        margin: 23px 0
+
+    #bookshelf
+      width: 100%
+      @include mx.flex()
+      flex-direction: column
+
+    @media screen and (min-width: sz.$sm)
+      #container
+        #wrapper
+
+    @media screen and (min-width: sz.$md)
+      #container
+        #wrapper
+
+    @media screen and (min-width: sz.$lg)
+      #container
+        #wrapper
+
+    @media screen and (min-width: sz.$xl)
+      #container
+        #wrapper

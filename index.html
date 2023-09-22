@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Book Management System</title>
+    <!--css-->
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/bookshelf.css" />
+  </head>
+  <body>
+    <main id="container">
+      <div id="wrapper">
+        <!-- Form Section -->
+        <form action="">
+          <h1>Insert new book</h1>
+          <label for="bookTitle" class="input">
+            <span>Book Title</span>
+            <input
+              type="text"
+              name="bookTitle"
+              id="bookTitle"
+              placeholder="Book title here..."
+            />
+          </label>
+          <label for="yearPublication" class="input">
+            <span>Year of Publication</span>
+            <input
+              type="number"
+              name="yearPublication"
+              id="yearPublication"
+              placeholder="Input year here..."
+            />
+          </label>
+          <label for="author" class="input">
+            <span>The author</span>
+            <input
+              type="text"
+              name="author"
+              id="author"
+              placeholder="Book author here..."
+            />
+          </label>
+          <label for="markRead" class="checkbox">
+            <input type="checkbox" id="markRead" />
+            <span>Mark as read</span>
+          </label>
+          <button type="submit">Insert book</button>
+        </form>
+
+        <!-- Bookshelf section -->
+        <div id="bookshelf">
+          <div id="readContainer">
+            <h2>Already Read</h2>
+            <div class="cardWrapper">
+              <article class="readCard card">
+                <h1>Book Title</h1>
+                <p>Written by <b>Writer</b> in <b>2003</b></p>
+                <div class="iconAction">
+                  <img src="./assets/invisible.svg" alt="" />
+                  <img src="./assets/delete.svg" alt="" />
+                </div>
+              </article>
+              <article class="readCard card">
+                <h1>Book Title</h1>
+                <p>Written by <b>Writer</b> in <b>2003</b></p>
+                <div class="iconAction">
+                  <img src="./assets/invisible.svg" alt="" />
+                  <img src="./assets/delete.svg" alt="" />
+                </div>
+              </article>
+            </div>
+          </div>
+          <div id="unreadContainer">
+            <h2>Unread</h2>
+            <div class="cardWrapper">
+              <article class="unreadCard card">
+                <h1>Book Title</h1>
+                <p>Written by <b>Writer</b> in <b>2003</b></p>
+                <div class="iconAction">
+                  <img src="./assets/eye.png" alt="" />
+                  <img src="./assets/delete.svg" alt="" />
+                </div>
+              </article>
+              <article class="unreadCard card">
+                <h1>Book Title</h1>
+                <p>Written by <b>Writer</b> in <b>2003</b></p>
+                <div class="iconAction">
+                  <img src="./assets/eye.png" alt="" />
+                  <img src="./assets/delete.svg" alt="" />
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../sass/globals.sass","../sass/_colors.sass","../sass/_mixin.sass"],"names":[],"mappings":"AAIA;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA,kBCbc;ECCd;EACA,iBFYiB;EEXjB,aFWyB;;AAEzB;EACE;EACA;EACA;EElBF;EACA,iBFkBmB;EEjBnB,aFiB0B;EACxB;EACA;EACA;;;AAEJ;EAEI;IE1BF;IACA,iBF0BqB;IEzBrB,aFyB6B;IACzB","file":"globals.css"}

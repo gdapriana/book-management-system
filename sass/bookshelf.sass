@@ -1,0 +1,70 @@
+@use "colors" as cl
+@use "sizes" as sz
+@use "mixin" as mx
+
+#container
+  #wrapper
+    #bookshelf
+      gap: 24px
+      padding-bottom: 68px
+      @include mx.flex()
+      flex-direction: column
+      & > div
+        width: 100%
+        & > .cardWrapper
+          width: 100%
+          @include mx.flex(start, center)
+          flex-direction: column
+          gap: 8px
+          & > .card
+            width: 100%
+            border-radius: 10px
+            border: 1px solid cl.$darkLiver
+            padding: 16px
+            h1
+              font-size: 1rem
+              color: cl.$darkLiver
+              margin: 4px 0
+
+            p
+              font-size: 14px
+              color: cl.$darkLiver
+
+            .iconAction
+              margin-top: 8px
+              gap: 8px
+              @include mx.flex(end)
+              
+              & > img:hover
+                cursor: pointer
+
+      & > div h2
+        color: cl.$darkLiver
+        font-size: 1rem
+        margin: 8px 0
+
+
+@media screen and (min-width: sz.$md)
+  #container
+    #wrapper
+      #bookshelf
+        flex-direction: row
+        & > div
+          width: 50%
+
+@media screen and (min-width: sz.$lg)
+  #container
+    #wrapper
+      #bookshelf
+        padding-bottom: 0
+        flex-direction: column
+        & > div
+          width: 100%
+
+@media screen and (min-width: sz.$xl)
+  #container
+    #wrapper
+      #bookshelf
+        flex-direction: row
+        & > div
+          width: 50%

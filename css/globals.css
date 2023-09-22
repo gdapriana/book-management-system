@@ -1,0 +1,37 @@
+*, *::before, *::after {
+  font-family: quicksand, Inter, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+#container #wrapper {
+  width: 100%;
+  padding: 48px;
+  gap: 42px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1280px;
+  height: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+  #container #wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=globals.css.map */

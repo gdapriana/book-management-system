@@ -1,0 +1,30 @@
+@use "colors" as cl
+@use "sizes" as sz
+@use "mixin" as mx
+
+*, *::before, *::after
+  font-family: quicksand, Inter, sans-serif
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+#container
+  width: 100%
+  height: 100vh
+  background-color: cl.$white
+  @include mx.flex(center, start)
+
+  #wrapper
+    width: 100%
+    padding: 48px
+    gap: 42px
+    @include mx.flex(start, center)
+    flex-direction: column
+    max-width: 1280px
+    height: 100%
+
+@media screen and (min-width: sz.$lg)
+  #container
+    #wrapper
+      @include mx.flex(center, center)
+      flex-direction: row
