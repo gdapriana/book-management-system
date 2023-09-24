@@ -1,17 +1,32 @@
-const RENDER_BOOK = "render-book";
+const SAVE_BOOK_EVENT = "save-book";
 const STORAGE_KEY = "BOOKSHELF_APP";
+const DELETED_EVENT = "deleted-book";
 const books = [];
 
 const isStorageExist = () => {
-  return typeof Storage !== "undefined";
+  return typeof Storage !== undefined;
 };
 const loadStorage = () => {
   const getBooks = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-  if (getBooks != null) {
-    for (const book of books) {
+  if (getBooks !== null) {
+    for (const book of getBooks) {
       books.push(book);
     }
   }
-  document.dispatchEvent(new Event(RENDER_BOOK));
+  document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
+};
+const saveData = () => {
+  if (isStorageExist()) {
+    const parsed = JSON.stringify(books);
+    localStorage.setItem(STORAGE_KEY, parsed);
+    document.dispatchEvent(new Event(SAVE_BOOK_EVENT));
+  }
+};
+const deleteData = () => {
+  if (isStorageExist()) {
+    const parsed = JSON.stringify(books);
+    localStorage.setItem(STORAGE_KEY, parsed);
+    document.dispatchEvent(new Event(DELETED_EVENT));
+  }
 };

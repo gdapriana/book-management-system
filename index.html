@@ -18,6 +18,7 @@
     <script src="./js/main.js" defer></script>
     <script src="./js/actions.js" defer></script>
     <script src="./js/storage.js" defer></script>
+    <script src="./js/dom.js" defer></script>
   </head>
   <body>
     <main id="container">
@@ -63,7 +64,7 @@
         <div id="bookshelf">
           <div id="readContainer">
             <h2>Already Read</h2>
-            <div class="cardWrapper">
+            <div class="cardWrapper" id="readCardWrapper">
               <article class="readCard card">
                 <h1>Book Title</h1>
                 <p>Written by <b>Writer</b> in <b>2003</b></p>
@@ -84,8 +85,8 @@
           </div>
           <div id="unreadContainer">
             <h2>Unread</h2>
-            <div class="cardWrapper">
-              <article class="unreadCard card">
+            <div class="cardWrapper" id="unreadCardWrapper">
+              <article class="readCard card">
                 <h1>Book Title</h1>
                 <p>Written by <b>Writer</b> in <b>2003</b></p>
                 <div class="iconAction">
