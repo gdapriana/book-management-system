@@ -19,6 +19,8 @@ const bookCardComponent = (book) => {
     ? actionWrapper.append(readIcon, trashIcon)
     : actionWrapper.append(unreadIcon, trashIcon);
 
+  readIcon.addEventListener("click", () => moveBookToReadSelf(book.id));
+  unreadIcon.addEventListener("click", () => moveBookToUnreadSelf(book.id));
   trashIcon.addEventListener("click", () => deleteBook(book.id));
 
   const container = document.createElement("article");

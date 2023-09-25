@@ -1,3 +1,5 @@
+const STORAGE_KEY = "BOOKSHELF_APP";
+const DELETED_EVENT = "deleted-book";
 const RENDER_BOOK_EVENT = "render-book";
 
 document.addEventListener(RENDER_BOOK_EVENT, () => {
@@ -6,13 +8,12 @@ document.addEventListener(RENDER_BOOK_EVENT, () => {
   const unreadSelf = document.getElementById("unreadCardWrapper");
   unreadSelf.innerHTML = "";
 
-  console.log(books);
-
   for (const book of books) {
     const component = bookCardComponent(book);
     book.isRead ? readSelf.append(component) : unreadSelf.append(component);
   }
 });
+
 const addBook = () => {
   const title = document.getElementById("bookTitle").value;
   const year = document.getElementById("yearPublication").value;
@@ -37,18 +38,53 @@ const addBook = () => {
     resetForm();
   }
 };
+
 const deleteBook = (id) => {
-  let getId = null;
-  for (const book of books) {
-    if (book.id === id) getId = book.id;
+  console.log(id);
+  const bookTarget = findBookIndex(id);
+  if (bookTarget === -1) return;
+
+  if (validationForm("Are you sure to delete this book?")) {
+    books.splice(bookTarget, 1);
+    document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
+    deleteBookFromStorage();
   }
-  books.splice(getId, 1);
-  document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
-  deleteData();
 };
+
+const moveBookToReadSelf = (id) => {
+  const bookTarget = findBookIndex(id);
+  if (bookTarget === null) return;
+  if (validationForm("Are you sure to move to read self this book?")) {
+    bookTarget.isRead = true;
+    document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
+  }
+};
+
+const moveBookToUnreadSelf = (id) => {
+  const bookTarget = findBookIndex(id);
+  if (bookTarget === null) return;
+  if (validationForm("Are you sure to move to unread self this book?")) {
+    bookTarget.isRead = false;
+    document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
+  }
+};
+
 const resetForm = () => {
   document.getElementById("bookTitle").value = "";
   document.getElementById("yearPublication").value = "";
   document.getElementById("author").value = "";
   document.getElementById("markRead").checked = false;
+};
+
+const findBookIndex = (id) => {
+  for (const book of books) {
+    if (book.id === id) {
+      return book;
+    }
+  }
+  return null;
+};
+
+const validationForm = (msg) => {
+  return confirm(msg);
 };

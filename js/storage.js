@@ -1,4 +1,3 @@
-const SAVE_BOOK_EVENT = "save-book";
 const STORAGE_KEY = "BOOKSHELF_APP";
 const DELETED_EVENT = "deleted-book";
 const books = [];
@@ -20,13 +19,17 @@ const saveData = () => {
   if (isStorageExist()) {
     const parsed = JSON.stringify(books);
     localStorage.setItem(STORAGE_KEY, parsed);
-    document.dispatchEvent(new Event(SAVE_BOOK_EVENT));
   }
 };
-const deleteData = () => {
+const moveData = () => {
   if (isStorageExist()) {
     const parsed = JSON.stringify(books);
     localStorage.setItem(STORAGE_KEY, parsed);
-    document.dispatchEvent(new Event(DELETED_EVENT));
+  }
+};
+const deleteBookFromStorage = () => {
+  if (isStorageExist()) {
+    const parsed = JSON.stringify(books);
+    localStorage.setItem(STORAGE_KEY, parsed);
   }
 };
