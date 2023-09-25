@@ -1,5 +1,3 @@
-const STORAGE_KEY = "BOOKSHELF_APP";
-const DELETED_EVENT = "deleted-book";
 const RENDER_BOOK_EVENT = "render-book";
 
 document.addEventListener(RENDER_BOOK_EVENT, () => {
