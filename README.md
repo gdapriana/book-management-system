@@ -39,3 +39,7 @@ Self-review is the process of ensuring that all submission checklists are met. M
 <hr>
 
 #### Figma Design [Here](https://www.figma.com/file/1Kou3b6BXupGBn66DXMH2P/Submission-Aplikasi-Pengelolaan-Data-Menggunakan-DOM-dan-Web-Storage?type=design&node-id=0%3A1&mode=design&t=riwCdVipNl7J9j5C-1)
+
+#### Visit complete web here
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9e7655cf-b918-4110-a573-faea424fe46d/deploy-status)](https://app.netlify.com/sites/book-management-system-ddb8cd/deploys)
+
