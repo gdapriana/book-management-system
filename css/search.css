@@ -1,0 +1,29 @@
+#search {
+  grid-area: search;
+}
+#search form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #eef2ff;
+  font-size: 0.8rem;
+  padding: 0 10px;
+}
+#search form img {
+  width: 24px;
+}
+#search form label {
+  flex: 1;
+}
+#search form label input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: transparent;
+}
+#search form label input:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=search.css.map */

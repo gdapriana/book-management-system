@@ -1,0 +1,52 @@
+@use "variables" as var
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap')
+
+*, *::before, *::after
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  font-family: "Inter", sans-serif
+
+body
+  display: flex
+  justify-content: center
+  align-items: center
+
+  #container
+    overflow: auto
+    width: 100%
+    padding: 12px
+    max-width: 1000px
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-areas: "search" "create" "read" "unread"
+    gap: 32px
+    margin-top: 64px
+
+    @media (min-width: var.$md)
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: repeat(2, 1fr)
+      grid-template-areas: "create search" "read unread"
+      gap: 40px
+
+    section
+      display: flex
+      flex-direction: column
+      justify-content: start
+      align-items: stretch
+      gap: 20px
+
+      header
+        font-weight: bold
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: .8rem
+        color: var.$indigo
+
+
+    #read
+      grid-area: read
+
+    #unread
+      grid-area: unread
