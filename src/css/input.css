@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #container > section {
+    @apply border rounded-lg md:p-8 p-4 flex flex-col gap-4 justify-start items-stretch;
+  }
+
+  section > header {
+    @apply font-bold text-lg text-indigo-500 flex justify-center items-center;
+  }
+}

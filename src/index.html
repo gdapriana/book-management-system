@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/output.css" rel="stylesheet" />
+  </head>
+  <body class="w-full flex justify-center items-start">
+    <main
+      id="container"
+      class="grid gap-8 p-8 w-full max-w-[1000px] grid-cols-1 md:grid-cols-2"
+    >
+      <section>
+        <header>
+          <h1>Create Book</h1>
+        </header>
+        <form action="">
+          <label for="title" class="block mb-4 text-sm font-medium"
+            ><span class="text-gray-500">Book Title</span>
+            <input
+              type="text"
+              id="title"
+              class="bg-gray-50 border mt-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-indigo-500 block w-full p-2.5"
+              placeholder="Your book title"
+              required
+            />
+          </label>
+          <label for="year" class="block mb-4 text-sm font-medium"
+            ><span class="text-gray-500">Year of Publication</span>
+            <input
+              type="number"
+              id="year"
+              class="bg-gray-50 border mt-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-indigo-500 block w-full p-2.5"
+              placeholder="Your book publication year"
+              required
+            />
+          </label>
+          <label for="author" class="block mb-4 text-sm font-medium"
+            ><span class="text-gray-500">Book Author</span>
+            <input
+              type="text"
+              id="author"
+              class="bg-gray-50 border mt-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-indigo-500 block w-full p-2.5"
+              placeholder="Your book author"
+              required
+            />
+          </label>
+          <div class="flex items-start mb-6">
+            <div class="flex items-center h-5">
+              <input
+                id="remember"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3"
+                required
+              />
+            </div>
+            <label for="remember" class="ms-2 text-sm font-medium text-gray-500"
+              >Mark as
+              <span class="text-indigo-600 hover:underline dark:text-indigo-500"
+                >Read</span
+              >.</label
+            >
+          </div>
+          <button type="submit" class="bg-indigo-500 ml-auto">Create</button>
+        </form>
+      </section>
+      <section>
+        <header>
+          <h1>Search Book</h1>
+        </header>
+        <form>
+          <label
+            for="search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >Search</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="search"
+              class="block w-full p-4 ps-10 text-sm border border-gray-300 rounded-lg bg-gray-50 dark:placeholder-gray-400 focus:outline-indigo-500"
+              placeholder="Search"
+              required
+            />
+            <button
+              type="submit"
+              class="text-white absolute end-2.5 bottom-2.5 bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+      </section>
+      <section>
+        <header><h1>Read</h1></header>
+      </section>
+      <section>
+        <header><h1>Unread</h1></header>
+      </section>
+    </main>
+  </body>
+</html>
