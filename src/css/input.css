@@ -4,10 +4,48 @@
 
 @layer components {
   #container > section {
-    @apply border rounded-lg md:p-8 p-4 flex flex-col gap-4 justify-start items-stretch;
+    @apply border rounded-xl md:p-8 p-4 flex flex-col gap-4 justify-start items-stretch;
   }
 
   section > header {
     @apply font-bold text-lg text-indigo-500 flex justify-center items-center;
+  }
+
+  section > .card-section {
+    @apply flex flex-col justify-start items-stretch gap-2
+  }
+
+  section > .card-section > article {
+    @apply bg-indigo-500 p-4 rounded-md flex flex-col justify-center items-stretch
+  }
+
+  section > .card-section > article h1 {
+    @apply font-bold text-lg text-white
+  }
+  section > .card-section > article p {
+    @apply text-white
+  }
+  section > .card-section > article .button-group {
+    @apply flex justify-start items-center ml-auto mt-4 gap-2
+  }
+
+  section > .card-section > article .button-group  button {
+    @apply bg-white text-gray-600 py-2 px-3 rounded-md
+  }
+
+  #delete-modal > article > .delete-button-group {
+    @apply ml-auto
+  }
+  #delete-modal > article > h1 {
+    @apply text-gray-800
+  }
+  #delete-modal > article > .delete-button-group button {
+    @apply text-white rounded-md px-3 py-2
+  }
+  #delete-modal > article > .delete-button-group button#cancel-delete-button {
+    @apply bg-indigo-500
+  }
+  #delete-modal > article > .delete-button-group button#yes-delete-button {
+    @apply bg-red-500
   }
 }

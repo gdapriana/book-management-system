@@ -1,9 +1,16 @@
 <!doctype html>
-<html>
+<html lang="eng">
   <head>
+    <title>Library</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./css/output.css" rel="stylesheet" />
+
+    <script src="./js/main.js" defer></script>
+    <script src="./js/actions.js" defer></script>
+    <script src="./js/storage.js" defer></script>
+    <script src="./js/dom.js" defer></script>
+
   </head>
   <body class="w-full flex justify-center items-start">
     <main
@@ -14,7 +21,7 @@
         <header>
           <h1>Create Book</h1>
         </header>
-        <form action="">
+        <form id="create-form" action="" class="flex flex-col">
           <label for="title" class="block mb-4 text-sm font-medium"
             ><span class="text-gray-500">Book Title</span>
             <input
@@ -48,21 +55,19 @@
           <div class="flex items-start mb-6">
             <div class="flex items-center h-5">
               <input
-                id="remember"
+                id="status"
                 type="checkbox"
-                value=""
                 class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3"
-                required
               />
             </div>
-            <label for="remember" class="ms-2 text-sm font-medium text-gray-500"
+            <label for="status" class="ms-2 text-sm font-medium text-gray-500"
               >Mark as
               <span class="text-indigo-600 hover:underline dark:text-indigo-500"
                 >Read</span
               >.</label
             >
           </div>
-          <button type="submit" class="bg-indigo-500 ml-auto">Create</button>
+          <button type="submit" class="bg-indigo-500 hover:bg-indigo-700 transition-all ease-in-out duration-300 text-white py-2 px-4 font-medium rounded-md">Create</button>
         </form>
       </section>
       <section>
@@ -104,19 +109,51 @@
             />
             <button
               type="submit"
-              class="text-white absolute end-2.5 bottom-2.5 bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+              class="text-white  transition-all ease-in-out duration-300 absolute end-2.5 bottom-2.5 bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
             >
               Search
             </button>
           </div>
         </form>
+        <div class="card-section" id="search-section">
+          <article>
+            <h1>Book 1 Title</h1>
+            <p>Created by [Author] on [Year]</p>
+            <div class="button-group">
+              <button>Mark Read</button>
+              <button>Delete</button>
+            </div>
+          </article>
+        </div>
       </section>
       <section>
         <header><h1>Read</h1></header>
+        <div class="card-section" id="read-section">
+          <article>
+            <h1>Book 1 Title</h1>
+            <p>Created by [Author] on [Year]</p>
+            <div class="button-group">
+              <button>Mark Read</button>
+              <button>Delete</button>
+            </div>
+          </article>
+        </div>
       </section>
       <section>
         <header><h1>Unread</h1></header>
+        <div class="card-section" id="unread-section">
+        </div>
       </section>
     </main>
+  
+  <div id="delete-modal" class="fixed w-full h-screen top-0 left-0 hidden justify-center items-center bg-black/50">
+    <article class="max-w-xl flex flex-col justify-start items-start w-full p-8 bg-white rounded-xl m-4">
+      <h1 id="delete-item-title">Are you sure to delete <strong>[title]</strong>?</h1>
+      <div class="delete-button-group">
+        <button id="cancel-delete-button">Cancel</button>
+        <button id="yes-delete-button">Yes</button>
+      </div>
+    </article>
+  </div>
   </body>
 </html>
