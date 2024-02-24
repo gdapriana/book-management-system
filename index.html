@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookshelf | dicoding</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <script src="./js/main.js" defer></script>
+  <script src="./js/actions.js" defer></script>
+  <script src="./js/storage.js" defer></script>
+  <script src="./js/dom.js" defer></script>
+
+</head>
+<body>
+<main class="container p-3">
+  <header class="row my-5">
+    <div class="col-12 text-center">
+      <h4>Submission Aplikasi Pengelolaan Data Menggunakan DOM dan Web Storage</h4>
+    </div>
+  </header>
+
+  <section class="my-5 d-flex justify-content-center align-items-start gap-5">
+    <div class="col-sm-6 d-flex flex-column justify-content-start align-items-stretch">
+      <header class="text-center"><h4>Create Book</h4></header>
+      <form id="create-form">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" required placeholder="Your book title" class="form-control" id="title">
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input type="text" required class="form-control" id="author" placeholder="Book author">
+        </div>
+        <div class="mb-3">
+          <label for="year" class="form-label">Year</label>
+          <input type="number" required class="form-control" id="year" placeholder="Year of publication">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="isread">
+          <label class="form-check-label" for="isread">Mark as read</label>
+        </div>
+        <button type="submit" class="btn btn-primary d-block ms-auto">Create</button>
+      </form>
+    </div>
+
+    <div class="col-sm-6 col-sm-6 d-flex flex-column gap-3 justify-content-start align-items-stretch">
+      <header class="text-center"><h4>Search Book</h4></header>
+      <form action="" id="search-form" class="d-flex gap-2 justify-content-center align-items-center">
+          <label for="search" class="input-group">
+            <span class="input-group-text" id="basic-addon1"><i class="bi-search"></i></span>
+            <input type="text" id="search" class="form-control" placeholder="Type anything...">
+          </label>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      <section id="search-section" class="d-flex gap-2 flex-column justify-content-start align-items-stretch"></section>
+    </div>
+  </section>
+
+  <section class="row my-5">
+    <div class="col-sm-6 d-flex flex-column justify-content-start align-items-stretch">
+      <header class="text-center"><h4>Read Book</h4></header>
+      <section id="read-section" class="d-flex gap-2 flex-column justify-content-start align-items-stretch">
+      </section>
+    </div>
+    <div class="col-sm-6 d-flex flex-column justify-content-start align-items-stretch">
+      <header class="text-center"><h4>Unread Book</h4></header>
+      <section id="unread-section" class="d-flex gap-2 flex-column justify-content-start align-items-stretch">
+        <article class="card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <div class="ms-auto">
+              <button class="btn btn-primary">Mark Read</button>
+              <button class="btn btn-danger">Delete</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </section>
+</main>
+
+<div id="delete-modal" class="position-fixed bg-opacity-50 bg-dark top-0 w-100 h-100 d-none justify-content-center align-items-center">
+  <article class="card">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title" id="delete-item-title"></h5>
+      <p class="card-text"></p>
+      <div class="ms-auto">
+        <button id="cancel-delete-button" class="btn btn-primary">Cancel</button>
+        <button id="yes-delete-button" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </article>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
