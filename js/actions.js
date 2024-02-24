@@ -13,9 +13,10 @@ document.addEventListener(RENDER_BOOK_EVENT, function () {
 });
 function addBook() {
   const title = document.querySelector("#title").value;
-  const year = document.querySelector("#year").value;
+  const year = Number(document.querySelector("#year").value);
   const author = document.querySelector("#author").value;
-  const isComplete = document.querySelector("#isread").checked;
+  const isComplete = document.querySelector("#isComplete").checked;
+
 
   books.push({
     id: new Date().valueOf(),
@@ -59,13 +60,13 @@ function deleteBook(id) {
 }
 function markRead(id) {
   const target = books.find((book) => book.id === id);
-  target.isRead = true;
+  target.isComplete = true;
   storageParse();
   document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
 }
 function markUnread(id) {
   const target = books.find((book) => book.id === id);
-  target.isRead = false;
+  target.isComplete = false;
   storageParse();
   document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
 }
@@ -83,8 +84,8 @@ document
       for (const book of books) {
         if (
           book.title.toLowerCase().includes(query) ||
-          book.year.toLowerCase().includes(query) ||
-          book.author.toLowerCase().includes(query) && query !== " "
+          String(book.year).toLowerCase().includes(query) ||
+          book.author.toLowerCase().includes(query)
         ) {
           searchResults.push(book)
         }
