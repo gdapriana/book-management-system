@@ -15,14 +15,14 @@ function addBook() {
   const title = document.querySelector("#title").value;
   const year = document.querySelector("#year").value;
   const author = document.querySelector("#author").value;
-  const isRead = document.querySelector("#isread").checked;
+  const isComplete = document.querySelector("#isread").checked;
 
   books.push({
     id: new Date().valueOf(),
     title: title,
     year: year,
     author: author,
-    isRead: isRead,
+    isRead: isComplete,
   });
   storageParse();
   document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
