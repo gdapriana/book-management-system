@@ -23,7 +23,7 @@ function cardComponent(book) {
   unreadBtn.innerHTML = "Mark Unread";
   readBtn.innerHTML = "Mark Read";
   deleteBtn.innerHTML = "Delete";
-  book.isRead
+  book.isComplete
     ? action.append(unreadBtn, deleteBtn)
     : action.append(readBtn, deleteBtn);
 

@@ -8,7 +8,7 @@ document.addEventListener(RENDER_BOOK_EVENT, function () {
 
   for (const book of books) {
     const component = cardComponent(book);
-    book.isRead ? read.append(component) : unread.append(component);
+    book.isComplete ? read.append(component) : unread.append(component);
   }
 });
 function addBook() {
@@ -22,7 +22,7 @@ function addBook() {
     title: title,
     year: year,
     author: author,
-    isRead: isComplete,
+    isComplete: isComplete,
   });
   storageParse();
   document.dispatchEvent(new Event(RENDER_BOOK_EVENT));
